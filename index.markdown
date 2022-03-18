@@ -10,40 +10,42 @@ title: Multiple Parson's Problems on One Page
 ## Parsons 1 (Line Based Grader)
 Re-arrange the blocks below so they print out "Hello World!"
 
-<div id="p1-sortableTrash" class="sortable-code"></div>
-<div id="p1-sortable" class="sortable-code"></div>
-<div style="clear:both;"></div>
-<p>
-    <input id="p1-feedbackLink" value="Get Feedback" type="button" />
-    <input id="p1-newInstanceLink" value="Reset Problem" type="button" />
-</p>
-<script type="text/javascript">
-(function() {
-  var initial = "print(\"Hello\")\n" +
-    "print(\" \")\n" +
-    "print(\"World\")\n" +
-    "print(\"!\")";
+<div id="password checker-sortableTrash" class="sortable-code"></div> 
+<div id="password checker-sortable" class="sortable-code"></div> 
+<div style="clear:both;"></div> 
+<p> 
+    <input id="password checker-feedbackLink" value="Get Feedback" type="button" /> 
+    <input id="password checker-newInstanceLink" value="Reset Problem" type="button" /> 
+</p> 
+<script type="text/javascript"> 
+(function(){
+  var initial = "name = input(&quot;Enter your password&quot;)\n" +
+    "while name != password:\n" +
+    "	print(&quot;Sorry, wrong password&quot;)\n" +
+    "if password == name:\n" +
+    "	print(&quot;Welcome user&quot;)";
   var parsonsPuzzle = new ParsonsWidget({
-    "sortableId": "p1-sortable",
+    "sortableId": "password checker-sortable",
     "max_wrong_lines": 10,
     "grader": ParsonsWidget._graders.LineBasedGrader,
     "exec_limit": 2500,
-    "can_indent": false,
+    "can_indent": true,
     "x_indent": 50,
     "lang": "en",
-    "trashId": "p1-sortableTrash"
+    "show_feedback": false,
+    "trashId": "password checker-sortableTrash"
   });
   parsonsPuzzle.init(initial);
   parsonsPuzzle.shuffleLines();
-  $("#p1-newInstanceLink").click(function(event){
-      event.preventDefault();
-      parsonsPuzzle.shuffleLines();
-  });
-  $("#p1-feedbackLink").click(function(event){
-      event.preventDefault();
-      parsonsPuzzle.getFeedback();
-  });
-})();
+  $("#password checker-newInstanceLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.shuffleLines(); 
+  }); 
+  $("#password checker-feedbackLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.getFeedback(); 
+  }); 
+})(); 
 </script>
 
 
