@@ -7,12 +7,12 @@ title: Multiple Parson's Problems on One Page
 ---
 # Parsons Practice
 
-<div id="password checker-sortableTrash" class="sortable-code"></div> 
-<div id="password checker-sortable" class="sortable-code"></div> 
+<div id="password_checker1-sortableTrash" class="sortable-code"></div> 
+<div id="password_checker1-sortable" class="sortable-code"></div> 
 <div style="clear:both;"></div> 
 <p> 
-    <input id="password checker-feedbackLink" value="Get Feedback" type="button" /> 
-    <input id="password checker-newInstanceLink" value="Reset Problem" type="button" /> 
+    <input id="password_checker1-feedbackLink" value="Get Feedback" type="button" /> 
+    <input id="password_checker1-newInstanceLink" value="Reset Problem" type="button" /> 
 </p> 
 <script type="text/javascript"> 
 (function(){
@@ -22,7 +22,7 @@ title: Multiple Parson's Problems on One Page
     "if password == name:\n" +
     "	print(&quot;Welcome user&quot;)";
   var parsonsPuzzle = new ParsonsWidget({
-    "sortableId": "password checker-sortable",
+    "sortableId": "password_checker1-sortable",
     "max_wrong_lines": 10,
     "grader": ParsonsWidget._graders.LineBasedGrader,
     "exec_limit": 2500,
@@ -30,15 +30,15 @@ title: Multiple Parson's Problems on One Page
     "x_indent": 50,
     "lang": "en",
     "show_feedback": false,
-    "trashId": "password checker-sortableTrash"
+    "trashId": "password_checker1-sortableTrash"
   });
   parsonsPuzzle.init(initial);
   parsonsPuzzle.shuffleLines();
-  $("#password checker-newInstanceLink").click(function(event){ 
+  $("#password_checker1-newInstanceLink").click(function(event){ 
       event.preventDefault(); 
       parsonsPuzzle.shuffleLines(); 
   }); 
-  $("#password checker-feedbackLink").click(function(event){ 
+  $("#password_checker1-feedbackLink").click(function(event){ 
       event.preventDefault(); 
       parsonsPuzzle.getFeedback(); 
   }); 
