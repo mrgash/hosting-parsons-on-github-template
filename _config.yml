@@ -32,7 +32,7 @@ twitter_username:
 github_username:
 
 # Build settings
-theme: jekyll-theme-minimal
+theme: jekyll-theme-architect
 plugins:
   - jekyll-feed
 
